@@ -1,0 +1,25 @@
+<%= form_with(model: @transaction, url: transactions_path) do |form| %>
+  <div class="field">
+    <%= form.label :client_id, 'Client' %>
+    <%= form.collection_select(:client_id, Client.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expense_description, 'Expense Description' %>
+    <%= form.text_field :expense_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expense_amount, 'Expense Amount' %>
+    <%= form.number_field :expense_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_amount, 'Payment Amount' %>
+    <%= form.number_field :payment_amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Transaction' %>
+  </div>
+<% end %>
