@@ -1,3 +1,8 @@
 <h3>Clients List</h3>
-<%# <% @clients.each do |client| %>
-<%# <%= client.first_name %>
+<ol>
+  <% @clients.each do |client| %>
+    <li>
+      <p><%= client.last_name%></p>
+    </li>
+  <% end %>
+</ol>
