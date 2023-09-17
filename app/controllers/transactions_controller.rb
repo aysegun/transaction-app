@@ -11,6 +11,7 @@ class TransactionsController < ApplicationController
 
   def new
     @expense = Expense.new
+    @payment = Payment.new
     # @transaction.client_id = params[:client_id]
   end
 
@@ -29,7 +30,7 @@ class TransactionsController < ApplicationController
       #   client: client
       # )
 
-      if expense.persisted?
+      if expense.persisted? && payment.persisted?
         redirect_to root_path, notice: 'Transaction was successfully created.'
       else
         raise ActiveRecord::Rollback

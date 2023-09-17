@@ -1,7 +1,7 @@
-<%= form_with(model: @transaction, url: new_client_transaction_path, method: :post) do |form| %>
+<%= form_with(model: [@client, @expense], url: new_client_transaction_path, method: :post) do |form| %>
   <div class="field">
     <%= form.label :client_id, 'Client' %>
-    <%= form.collection_select(:client_id, Client.all, :id, :first_name, :last_name) %>
+    <%= form.collection_select :client_id, Client.all, :id, :first_name, :last_name, promt: 'Select a client' %>
   </div>
 
   <div class="field">
