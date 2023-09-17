@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :transactions
   end
 
-  root "transactions#new"
+  root 'transactions#new'
 end
